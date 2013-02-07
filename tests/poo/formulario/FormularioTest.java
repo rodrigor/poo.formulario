@@ -14,11 +14,12 @@ public class FormularioTest {
 	public void testeBasicoFormulario() {
 		
 		Formulario f = new Formulario();
-		f.addCampo(new Campo("texto","Campo Texto",new ValidadorTexto(5)));
+		f.addCampo(new Campo("texto","Campo Texto",new ValidadorTexto()));
 		f.addCampo(new Campo("inteiro","Campo Inteiro",new ValidadorInteiro()));
 		
 		assertTrue(f.setValor("texto","abcde"));
-		assertFalse(f.setValor("texto","abcdef"));
+		assertTrue(f.setValor("texto","abcdef"));
+		assertTrue(f.setValor("texto",null));
 		
 	}
 

@@ -11,35 +11,23 @@ public class CampoTest {
 
 	@Test
 	public void testValidadorTexto() {
-		Campo c = new Campo("nome","Nome completo:", new ValidadorTexto(5));
+		Campo c = new Campo("nome","Nome completo:", new ValidadorTexto());
 		
 		c.setValor(null);
-		assertFalse(c.validar());
+		assertTrue(c.validar());
 		
 		c.setValor("");
-		assertFalse(c.validar());
+		assertTrue(c.validar());
 		
 		c.setValor("abcde");
 		assertTrue(c.validar());
 		
-		c.setValor("abcdef");
+		c.setValor("2387462");
 		assertFalse(c.validar());
 		
 		
 	}
 	
-	@Test
-	public void testValidadorInteiro(){
-		Campo c = new Campo("idade","Digite sua idade:",new ValidadorInteiro());
-		
-		c.setValor(null);
-		assertFalse(c.validar());
-		
-		c.setValor("dkjfghsjghdkj");
-		assertFalse(c.validar());
-		
-		c.setValor("123");
-		assertTrue(c.validar());
-	}
+
 
 }
