@@ -1,6 +1,8 @@
 package poo.formulario;
 
-public class Campo {
+import java.io.PrintStream;
+
+public class Campo implements ComponenteDeFormulario{
 	
 	private String id;
 	private String label;
@@ -25,8 +27,14 @@ public class Campo {
 		this.valor = valor;
 	}
 	
+	@Override
 	public boolean validar(){
 		return validador.validar(this.valor);
+	}
+
+	@Override
+	public void exibir(PrintStream out) {
+		out.println("\t"+this.label+":"+this.valor);
 	}
 
 }

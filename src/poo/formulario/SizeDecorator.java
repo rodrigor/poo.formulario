@@ -9,7 +9,7 @@ public class SizeDecorator extends ValidadorDecorator{
 		super(validador);
 	}
 	
-	public SizeDecorator(ValidadorDeCampo validador, int min, int max){
+	public SizeDecorator(int min, int max, ValidadorDeCampo validador){
 		this(validador);
 		this.max = max;
 		this.min = min;

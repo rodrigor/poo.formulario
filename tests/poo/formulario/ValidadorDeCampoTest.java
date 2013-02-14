@@ -51,7 +51,7 @@ public class ValidadorDeCampoTest {
 	
 	@Test
 	public void testSizeDecorator(){
-		Campo c = new Campo("texto","Teste",new SizeDecorator(new ValidadorTexto(),3,8));
+		Campo c = new Campo("texto","Teste",new SizeDecorator(3,8,new ValidadorTexto()));
 		
 		c.setValor("abc");
 		assertTrue(c.validar());
